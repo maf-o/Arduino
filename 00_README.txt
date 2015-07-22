@@ -1,5 +1,3 @@
-# Arduino
-
 Hier finden sich alle meine Arduino Schnipsel ein
 soweit ich Lust habe werden diese auch hier dokumentiert
 
