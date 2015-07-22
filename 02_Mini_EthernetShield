@@ -1,0 +1,13 @@
+Im folgenden zusehen die Verbindung des roten Mini Ethernetshields mit Wiznet W5100 Red
+
+GND – Ground from the Arduino
+VIN   –   +5V from Arduino
+NSS   – Pin 10 from Arduino
+MO    – Pin 11 from Arduino (MOSI)
+MI     – Pin 12 from Arduino (MISO)
+SOK   – Pin 13 from Arduino (SCK)
+
+Ich habe das ganze mit einem Arduino nano getestet
+THX geht an:
+http://www.badcompanyx.eu/arduino-nano-and-wiznet-w5100-red/
+
