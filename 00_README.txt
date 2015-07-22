@@ -8,4 +8,8 @@ soweit ich Lust habe werden diese auch hier dokumentiert
 | zukoennen.                                                   |
 |Getestet auf einem Arduino NANO 328 und billig Sender FS100A  |
 +--------------------------------------------------------------+
+| 02_Mini_EthernetShield                                       |
++--------------------------------------------------------------+
+| Wie man das Mini Ethernetshield anschliessen muss            |
++--------------------------------------------------------------+
 
