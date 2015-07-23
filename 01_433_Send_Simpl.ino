@@ -1,14 +1,11 @@
 #include <RCSwitch.h>
+// Library von https://code.google.com/p/rc-switch/
 
 RCSwitch mySwitch = RCSwitch();
 
-int led = 13;
-
 void setup() {
-
   // Transmitter is connected to Arduino Pin #10  
   mySwitch.enableTransmit(10);
-  
 }
 
 void loop() {
