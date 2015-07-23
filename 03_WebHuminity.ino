@@ -13,6 +13,8 @@
  modified 9 Apr 2012
  by Tom Igoe
  
+ Huminity Library von https://github.com/adafruit/DHT-sensor-library
+ 
  */
 
 #include <SPI.h>
