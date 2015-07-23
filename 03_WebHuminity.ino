@@ -1,3 +1,4 @@
+
 /*
   Web Server
 
@@ -13,7 +14,7 @@
 #include "DHT.h"
 
 
-#define DHTPIN 2     // what pin we're connected to
+#define DHTPIN 2     // DHT Data Pin auf Arduino Pin 2
 
 // Uncomment whatever type you're using!
 #define DHTTYPE DHT11   // DHT 11
@@ -87,33 +88,30 @@ void loop() {
                     // add a meta refresh tag, so the browser pulls again every 5 seconds:
           client.println("<meta http-equiv=\"refresh\" content=\"5\">");
             
-            float h = dht.readHumidity();
-            float t = dht.readTemperature();
-            float f = dht.readTemperature(true);
+          float h = dht.readHumidity();
+          float t = dht.readTemperature();
+          float f = dht.readTemperature(true);
             
-          // Ohne diese IF wird das HTML angezeigt
-            
-          // if (isnan(h) || isnan(t) || isnan(f)) {
-          //     client.println("Failed to read from DHT sensor");
-          //  }
-            
+          if (isnan(h) || isnan(t) || isnan(f)) {
+            client.println("Failed to read from DHT sensor");
+          } else {
             float hif = dht.computeHeatIndex(f, h);
             float hic = dht.computeHeatIndex(t, h, false);
             
             client.print("Humidity ");
             client.print(h);
             client.print(" pro t");
-  client.print("Temperature ");
-  client.print(t);
-  client.print(" C ");
-  client.print(f);
-  client.print(" F pro t");
-  client.print("Heat index ");
-  client.print(hic);
-  client.print(" C ");
-  client.print(hif);
-  client.println(" F");     
-          
+            client.print("Temperature ");
+            client.print(t);
+            client.print(" C ");
+            client.print(f);
+            client.print(" F pro t");
+            client.print("Heat index ");
+            client.print(hic);
+            client.print(" C ");
+            client.print(hif);
+            client.println(" F"); 
+          }
           client.println("</html>");
           break;
         }
