@@ -100,9 +100,11 @@ void loop() {
             float t = dht.readTemperature();
             float f = dht.readTemperature(true);
             
-            if (isnan(h) || isnan(t) || isnan(f)) {
-               client.println("Failed to read from DHT sensor");
-            }
+          // Ohne diese IF wird das HTML angezeigt
+            
+          // if (isnan(h) || isnan(t) || isnan(f)) {
+          //     client.println("Failed to read from DHT sensor");
+          //  }
             
             float hif = dht.computeHeatIndex(f, h);
             float hic = dht.computeHeatIndex(t, h, false);
