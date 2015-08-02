@@ -15,8 +15,8 @@ LedControl lc=LedControl(9,11,10,1);
 unsigned long delaytime=250;
 unsigned long time;
 
-int an;
-int aus;
+unsigned long an;
+unsigned long aus;
 int anzeige;
 boolean ausgang = true;
 
@@ -29,8 +29,8 @@ void setup() {
   pinMode(6, OUTPUT);
   
   
-  an = 10;
-  aus = 10;
+  an = 1;
+  aus = 60;
   anzeige = 0;
   /*
    The MAX72XX is in power-saving mode on startup,
@@ -77,7 +77,7 @@ void loop() {
   int up_aus = digitalRead(5);
   
   if (down_an == HIGH) {
-    an = an - 10;
+    an = an - 1;
     if (an < 0){
       an = 0;
     }
@@ -85,14 +85,14 @@ void loop() {
   }
   
   if (up_an == HIGH) {
-    an = an + 10;
+    an = an + 1;
     time = millis() + an* 1000;
   }
   
   
   
   if (down_aus == HIGH) {
-    aus = aus - 10;
+    aus = aus - 60;
     if (aus < 0){
       aus = 0;
     }
@@ -100,11 +100,11 @@ void loop() {
   }
   
   if (up_aus == HIGH) {
-    aus = aus + 10;
+    aus = aus + 60;
 
   }
   
-  if (millis() == time){
+  if (millis() > time){
     
     ausgang =! ausgang;
     
