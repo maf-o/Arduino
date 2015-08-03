@@ -18,7 +18,7 @@ unsigned long time;
 unsigned long an;
 unsigned long aus;
 int anzeige;
-boolean ausgang = false;
+boolean ausgang = true;
 
 void setup() {
   
@@ -84,7 +84,7 @@ void loop() {
     
     ausgang =! ausgang;
     
-    if (ausgang == false){
+    if (ausgang == true){
       
       time = millis() + aus* 1000;
     
