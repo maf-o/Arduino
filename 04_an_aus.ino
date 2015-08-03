@@ -9,7 +9,7 @@
  pin 10 is connected to LOAD 
  We have only a single MAX72XX.
  */
-LedControl lc=LedControl(9,11,10,1);
+LedControl lc=LedControl(16,14,15,1);
 
 /* we always wait a bit between updates of the display */
 unsigned long delaytime=250;
@@ -22,10 +22,10 @@ boolean ausgang = true;
 
 void setup() {
   
+  pinMode(0, INPUT);
+  pinMode(1, INPUT);
   pinMode(2, INPUT);
   pinMode(3, INPUT);
-  pinMode(4, INPUT);
-  pinMode(5, INPUT);
   pinMode(6, OUTPUT);
   
   
@@ -42,30 +42,6 @@ void setup() {
   /* and clear the display */
   lc.clearDisplay(0);
 }
-
-
-/*
- This method will display the characters for the
- word "Arduino" one after the other on digit 0. 
- */
-void writeArduinoOn7Segment() {
-  lc.setChar(0,0,'a',false);
-  delay(delaytime);
-  lc.setRow(0,0,0x05);
-  delay(delaytime);
-  lc.setChar(0,0,'d',false);
-  delay(delaytime);
-  lc.setRow(0,0,0x1c);
-  delay(delaytime);
-  lc.setRow(0,0,B00010000);
-  delay(delaytime);
-  lc.setRow(0,0,0x15);
-  delay(delaytime);
-  lc.setRow(0,0,0x1D);
-  delay(delaytime);
-  lc.clearDisplay(0);
-  delay(delaytime);
-} 
 
 
 
