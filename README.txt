@@ -8,12 +8,22 @@ soweit ich Lust habe werden diese auch hier dokumentiert
 | koennen.                                                     |
 | Getestet auf einem Arduino NANO 328 und billig Sender FS100A |
 +--------------------------------------------------------------+
++--------------------------------------------------------------+
 | 02_Mini_EthernetShield                                       |
 +--------------------------------------------------------------+
 | Wie man das Mini Ethernetshield anschliessen muss            |
++--------------------------------------------------------------+
 +--------------------------------------------------------------+
 | 03_WebHuminity.ino                                           |
 +--------------------------------------------------------------+
 | Anzeige der aktuellen Temperatur und der Luftfeuchtigkeit    | 
 | mittels lokaler HTML Seite                                   |
++--------------------------------------------------------------+
++--------------------------------------------------------------+
+| 04_ANAUS.ino                                                 |
++--------------------------------------------------------------+
+| Mit diesem Projekt laesst sich ein Ausgang fuer eine         | 
+| einstellbare Zeit An und Aus schalten.                       |
+| Zur Ansteuerung der 7 Segment wird ein MAX7221 und die       |
+| Arduino Lib LedControl                                       |
 +--------------------------------------------------------------+
