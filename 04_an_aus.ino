@@ -18,7 +18,7 @@ unsigned long time;
 unsigned long an;
 unsigned long aus;
 int anzeige;
-boolean ausgang = true;
+boolean ausgang = false;
 
 void setup() {
   
@@ -47,10 +47,10 @@ void setup() {
 
 void loop() { 
   
-  int down_an = digitalRead(2);
-  int up_an = digitalRead(3);
-  int down_aus = digitalRead(4);
-  int up_aus = digitalRead(5);
+  int down_an = digitalRead(3);
+  int up_an = digitalRead(2);
+  int down_aus = digitalRead(1);
+  int up_aus = digitalRead(0);
   
   if (down_an == HIGH) {
     an = an - 1;
@@ -96,7 +96,7 @@ void loop() {
   }
 
   
-    anzeige = an;
+    anzeige = aus;
     lc.setDigit(0,0,anzeige %10,false);
     anzeige = anzeige/10;
     lc.setDigit(0,1,anzeige %10,false);
@@ -105,7 +105,7 @@ void loop() {
     anzeige = anzeige/10;
     lc.setDigit(0,3,anzeige %10,false);
     
-    anzeige = aus;
+    anzeige = an;
     lc.setDigit(0,4,anzeige %10,false);
     anzeige = anzeige/10;
     lc.setDigit(0,5,anzeige %10,false);
